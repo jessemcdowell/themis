@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using Castle.MicroKernel.Registration;
 using Themis.Email;
 
 namespace Themis.TestClient
@@ -10,10 +11,14 @@ namespace Themis.TestClient
         {
             try
             {
+                RegisterTestClients();
+
                 IEmailRetriever mailRetriever = Config.Container.Resolve<IEmailRetriever>();
                 MailboxConnectionInfo mailboxInfo = GetMailboxInfoFromAppConfig();
 
-                ListAllMessages(mailRetriever, mailboxInfo);
+
+                Config.Container.Resolve<ListAllEmails>().Execute(mailboxInfo);
+                
             }
             catch (Exception ex)
             {
@@ -22,19 +27,6 @@ namespace Themis.TestClient
             Pause();
         }
 
-        private static void ListAllMessages(IEmailRetriever mailRetriever, MailboxConnectionInfo mailboxInfo)
-        {
-            Console.WriteLine("Retrieving email from {0}:{1}", mailboxInfo.HostName, mailboxInfo.Port);
-
-            mailRetriever.GetMessages(mailboxInfo, message =>
-            {
-                Console.WriteLine("- From: {0}, Subject: {1}", message.From.ToString(), message.Subject);
-                return false;
-            });
-
-
-            Console.WriteLine("Done.");
-        }
 
         private static MailboxConnectionInfo GetMailboxInfoFromAppConfig()
         {
@@ -57,6 +49,13 @@ namespace Themis.TestClient
                 mailboxInfo.Port = Int32.Parse(hostParts[1]);
 
             return mailboxInfo;
+        }
+
+        private static void RegisterTestClients()
+        {
+            Config.Container.Register(
+                AllTypes.FromAssembly(typeof(Program).Assembly).Where(t => true).Configure(c => c.LifeStyle.Transient)
+                ); 
         }
 
         private static void Pause()
