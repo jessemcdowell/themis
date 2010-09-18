@@ -11,20 +11,29 @@ namespace Themis.TestClient
             try
             {
                 IEmailRetriever mailRetriever = Config.Container.Resolve<IEmailRetriever>();
-
                 MailboxConnectionInfo mailboxInfo = GetMailboxInfoFromAppConfig();
 
-                Console.WriteLine("Retrieving email from {0}:{1}", mailboxInfo.HostName, mailboxInfo.Port);
-
-                mailRetriever.GetMessages(mailboxInfo, HandleMessage);
-
-                Console.WriteLine("Done.");
+                ListAllMessages(mailRetriever, mailboxInfo);
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.ToString());
             }
             Pause();
+        }
+
+        private static void ListAllMessages(IEmailRetriever mailRetriever, MailboxConnectionInfo mailboxInfo)
+        {
+            Console.WriteLine("Retrieving email from {0}:{1}", mailboxInfo.HostName, mailboxInfo.Port);
+
+            mailRetriever.GetMessages(mailboxInfo, message =>
+            {
+                Console.WriteLine("- From: {0}, Subject: {1}", message.From.ToString(), message.Subject);
+                return false;
+            });
+
+
+            Console.WriteLine("Done.");
         }
 
         private static MailboxConnectionInfo GetMailboxInfoFromAppConfig()
@@ -49,13 +58,6 @@ namespace Themis.TestClient
 
             return mailboxInfo;
         }
-
-        private static bool HandleMessage(IReceivedEmail message)
-        {
-            Console.WriteLine("- From: {0}, Subject: {1}", message.From.ToString(), message.Subject);
-            return false;
-        }
-
 
         private static void Pause()
         {
