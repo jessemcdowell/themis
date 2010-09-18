@@ -52,7 +52,7 @@ namespace Themis.TestClient
 
         private static bool HandleMessage(IReceivedEmail message)
         {
-            Console.WriteLine("- {0}", message.ToString());
+            Console.WriteLine("- From: {0}, Subject: {1}", message.From.ToString(), message.Subject);
             return false;
         }
 

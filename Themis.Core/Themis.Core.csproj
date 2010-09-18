@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config.cs" />
+    <Compile Include="Email\EmailAddress.cs" />
     <Compile Include="Email\IEmailRetriever.cs" />
     <Compile Include="Email\IReceivedEmail.cs" />
     <Compile Include="Email\MailboxConnectionInfo.cs" />

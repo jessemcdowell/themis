@@ -19,5 +19,15 @@ namespace Themis.Email
         {
             return _message.Subject;
         }
+
+        public EmailAddress From
+        {
+            get { return new EmailAddress(_message.From.Email, _message.From.Name); }
+        }
+
+        public string Subject
+        {
+            get { return _message.Subject; }
+        }
     }
 }
