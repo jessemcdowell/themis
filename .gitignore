@@ -1,5 +1,6 @@
-obj/
-bin/
+[oO]bj/
+[bB]in/
+ClientBin/
 deploy/
 *.user
 *.suo
