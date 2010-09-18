@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Configuration;
-using Themis.Mail;
+using Themis.Email;
 
 namespace Themis.TestClient
 {

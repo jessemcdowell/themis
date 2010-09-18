@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Themis.Mail
+namespace Themis.Email
 {
     /// <summary>
     /// Information required for connecting to a mailbox.

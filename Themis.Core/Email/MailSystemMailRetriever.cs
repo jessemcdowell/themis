@@ -1,7 +1,7 @@
 ﻿using System;
 using ActiveUp.Net.Mail;
 
-namespace Themis.Mail
+namespace Themis.Email
 {
     /// <summary>
     /// Wrapper for recieving messages using the MailSystem Pop3 implementation.

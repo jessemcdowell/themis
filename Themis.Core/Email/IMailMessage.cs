@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Themis.Mail
+namespace Themis.Email
 {
     public interface IMailMessage
     {
