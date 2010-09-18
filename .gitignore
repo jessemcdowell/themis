@@ -1,0 +1,8 @@
+obj/
+bin/
+deploy/
+*.user
+*.suo
+*.cache
+_ReSharper.*
+*.resharper
