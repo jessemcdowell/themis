@@ -6,11 +6,11 @@ namespace Themis.Email
     /// <summary>
     /// Wrapper for a message returned from the MailSystem Pop3 implementation.
     /// </summary>
-    public class MailSystemMailMessage : IMailMessage
+    public class MailSystemReceivedEmail : IReceivedEmail
     {
         private readonly Message _message;
 
-        public MailSystemMailMessage(Message message)
+        public MailSystemReceivedEmail(Message message)
         {
             _message = message;
         }

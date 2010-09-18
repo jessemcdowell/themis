@@ -10,7 +10,7 @@ namespace Themis.TestClient
         {
             try
             {
-                IMailRetriever mailRetriever = Config.Container.Resolve<IMailRetriever>();
+                IEmailRetriever mailRetriever = Config.Container.Resolve<IEmailRetriever>();
 
                 MailboxConnectionInfo mailboxInfo = GetMailboxInfoFromAppConfig();
 
@@ -50,7 +50,7 @@ namespace Themis.TestClient
             return mailboxInfo;
         }
 
-        private static bool HandleMessage(IMailMessage message)
+        private static bool HandleMessage(IReceivedEmail message)
         {
             Console.WriteLine("- {0}", message.ToString());
             return false;

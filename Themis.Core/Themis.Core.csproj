@@ -55,11 +55,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config.cs" />
-    <Compile Include="Email\IMailRetriever.cs" />
-    <Compile Include="Email\IMailMessage.cs" />
-    <Compile Include="Email\MailSystemMailMessage.cs" />
-    <Compile Include="Email\MailSystemMailRetriever.cs" />
+    <Compile Include="Email\IEmailRetriever.cs" />
+    <Compile Include="Email\IReceivedEmail.cs" />
     <Compile Include="Email\MailboxConnectionInfo.cs" />
+    <Compile Include="Email\MailSystemEmailRetriever.cs" />
+    <Compile Include="Email\MailSystemReceivedEmail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

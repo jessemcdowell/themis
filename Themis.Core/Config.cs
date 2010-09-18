@@ -21,7 +21,7 @@ namespace Themis
         {
             Container.Register(
 
-                Component.For<Email.IMailRetriever>().ImplementedBy<Email.MailSystemMailRetriever>()
+                Component.For<Email.IEmailRetriever>().ImplementedBy<Email.MailSystemEmailRetriever>()
 
                 );
         }

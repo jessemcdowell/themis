@@ -6,9 +6,9 @@ namespace Themis.Email
     /// <summary>
     /// Wrapper for recieving messages using the MailSystem Pop3 implementation.
     /// </summary>
-    public class MailSystemMailRetriever : IMailRetriever
+    public class MailSystemEmailRetriever : IEmailRetriever
     {
-        public void GetMessages(MailboxConnectionInfo server, Func<IMailMessage, bool> messageRecievedCallback)
+        public void GetMessages(MailboxConnectionInfo server, Func<IReceivedEmail, bool> messageRecievedCallback)
         {
             using (Pop3Client pop3 = new Pop3Client())
             {
@@ -20,7 +20,7 @@ namespace Themis.Email
                 {
                     Message message = pop3.RetrieveMessageObject(i);
 
-                    bool messageHandled = messageRecievedCallback(new MailSystemMailMessage(message));
+                    bool messageHandled = messageRecievedCallback(new MailSystemReceivedEmail(message));
 
                     if (messageHandled)
                         pop3.DeleteMessage(i);

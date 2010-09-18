@@ -2,7 +2,7 @@
 
 namespace Themis.Email
 {
-    public interface IMailMessage
+    public interface IReceivedEmail
     {
     }
 }
