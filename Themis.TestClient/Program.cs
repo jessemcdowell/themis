@@ -16,8 +16,8 @@ namespace Themis.TestClient
                 IEmailRetriever mailRetriever = Config.Container.Resolve<IEmailRetriever>();
                 MailboxConnectionInfo mailboxInfo = GetMailboxInfoFromAppConfig();
 
-
-                Config.Container.Resolve<ListAllEmails>().Execute(mailboxInfo);
+                //Config.Container.Resolve<ListAllEmails>().Execute(mailboxInfo);
+                Config.Container.Resolve<ReplyToAllEmails>().Execute(mailboxInfo);
                 
             }
             catch (Exception ex)
@@ -32,23 +32,55 @@ namespace Themis.TestClient
         {
             MailboxConnectionInfo mailboxInfo = new MailboxConnectionInfo()
             {
-                Username = ConfigurationManager.AppSettings["MailboxUsername"],
-                Password = ConfigurationManager.AppSettings["MailboxPassword"],
+                Username = ConfigurationManager.AppSettings["Username"],
+                Password = ConfigurationManager.AppSettings["Password"],
+                SmtpRequiresAuthentication = Boolean.Parse(ConfigurationManager.AppSettings["SmtpRequiresAuthentication"]),
             };
 
-            // get the hostname with optional :port
-            string hostNameText = ConfigurationManager.AppSettings["MailboxHostname"];
-            if (String.IsNullOrEmpty(hostNameText))
-                throw new ApplicationException("You must configure the hostname, username, and password in the app config file");
+            mailboxInfo.EmailAddress = new EmailAddress(
+                ConfigurationManager.AppSettings["EmailAddress"],
+                ConfigurationManager.AppSettings["EmailName"]);
 
-            string[] hostParts = hostNameText.Split(':');
 
-            mailboxInfo.HostName = hostParts[0];
+            // pop3 server
+            string pop3Server = ConfigurationManager.AppSettings["Pop3Server"];
+            if (String.IsNullOrEmpty(pop3Server))
+                throw new ApplicationException("You must specify a POP3 server");
 
-            if (hostParts.GetLength(0) > 1)
-                mailboxInfo.Port = Int32.Parse(hostParts[1]);
+            string pop3Host;
+            int pop3Port;
+            ParseServerName(pop3Server, out pop3Host, out pop3Port, mailboxInfo.ReceivePort);
+            mailboxInfo.ReceiveHostName = pop3Host;
+            mailboxInfo.ReceivePort = pop3Port;
+
+
+            // smtp server
+            string smtpServer = ConfigurationManager.AppSettings["SmtpServer"];
+            if (String.IsNullOrEmpty(smtpServer))
+                throw new ApplicationException("You must specify an SMTP server");
+
+            string smtpHost;
+            int smtpPort;
+            ParseServerName(smtpServer, out smtpHost, out smtpPort, mailboxInfo.SmtpPort);
+            mailboxInfo.SmtpHostName = smtpHost;
+            mailboxInfo.SmtpPort = smtpPort;
+
 
             return mailboxInfo;
+        }
+
+        private static void ParseServerName(string text, out string hostname, out int port, int defaultPort)
+        {
+            string[] hostParts = text.Split(':');
+
+            // host name
+            hostname = hostParts[0];
+
+            // optional port
+            if (hostParts.GetLength(0) > 1)
+                port = Int32.Parse(hostParts[1]);
+            else
+                port = defaultPort;
         }
 
         private static void RegisterTestClients()

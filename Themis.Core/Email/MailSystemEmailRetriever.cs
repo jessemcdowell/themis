@@ -12,7 +12,7 @@ namespace Themis.Email
         {
             using (Pop3Client pop3 = new Pop3Client())
             {
-                pop3.Connect(server.HostName, server.Port, server.Username, server.Password);
+                pop3.Connect(server.ReceiveHostName, server.ReceivePort, server.Username, server.Password);
 
                 int count = pop3.MessageCount;
 

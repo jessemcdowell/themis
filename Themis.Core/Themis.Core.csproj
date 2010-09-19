@@ -39,6 +39,9 @@
     <Reference Include="ActiveUp.Net.Pop3">
       <HintPath>..\lib\MailSystem.NET.December.2009\ActiveUp.Net.Pop3.dll</HintPath>
     </Reference>
+    <Reference Include="ActiveUp.Net.Smtp">
+      <HintPath>..\lib\MailSystem.NET.December.2009\ActiveUp.Net.Smtp.dll</HintPath>
+    </Reference>
     <Reference Include="Castle.Core">
       <HintPath>..\lib\Castle.Windsor.2.5\bin-dotNet40\Castle.Core.dll</HintPath>
     </Reference>
@@ -56,11 +59,14 @@
   <ItemGroup>
     <Compile Include="Config.cs" />
     <Compile Include="Email\EmailAddress.cs" />
+    <Compile Include="Email\EmailBuilder.cs" />
     <Compile Include="Email\IEmailRetriever.cs" />
     <Compile Include="Email\IReceivedEmail.cs" />
+    <Compile Include="Email\IEmailSender.cs" />
     <Compile Include="Email\MailboxConnectionInfo.cs" />
     <Compile Include="Email\MailSystemEmailRetriever.cs" />
     <Compile Include="Email\MailSystemReceivedEmail.cs" />
+    <Compile Include="Email\SystemEmailSender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -18,7 +18,7 @@ namespace Themis.Email
                 throw new ArgumentException("You must specify an email address", "address");
 
             Address = address;
-            Name = name;
+            Name = String.IsNullOrWhiteSpace(name) ? null : name;
         }
 
         public string Address { get; private set; }
@@ -27,10 +27,11 @@ namespace Themis.Email
 
         public override string ToString()
         {
-            if (String.IsNullOrEmpty(Name))
+            if (Name == null)
                 return Address;
             else
                 return String.Format("\"{0}\" <{1}>", Name.Replace('"', '\''), Address);
         }
+
     }
 }

@@ -14,7 +14,7 @@ namespace Themis.TestClient
 
         public void Execute(MailboxConnectionInfo mailboxInfo)
         {
-            Console.WriteLine("Retrieving email from {0}:{1}", mailboxInfo.HostName, mailboxInfo.Port);
+            Console.WriteLine("Retrieving email from {0}:{1}", mailboxInfo.ReceiveHostName, mailboxInfo.ReceivePort);
 
             _retriever.GetMessages(mailboxInfo, message =>
             {
