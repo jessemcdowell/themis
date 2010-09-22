@@ -1,0 +1,14 @@
+NOT INCLUDED
+
+NUnit 2.5.7
+http://www.nunit.org/
+
+
+INCLUDED WITH SOURCE
+
+MailSystem.NET December 2009 Release
+http://mailsystem.codeplex.com/
+
+Castle Windsor 2.5
+http://www.castleproject.org/container/index.html
+
