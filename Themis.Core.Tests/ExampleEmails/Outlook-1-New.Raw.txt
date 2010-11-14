@@ -1,0 +1,69 @@
+Return-path: <testorganizer@fake.foo>
+Date: Sun, 14 Nov 2010 14:27:55 -0800
+From: Test Organizer <testorganizer@fake.foo>
+Subject: Test Appointment from Outlook
+To: testuser@fake.foo
+Message-id: <02ad01cb844b$2f375480$voidvoid$%void@fake.foo>
+MIME-version: 1.0
+X-Mailer: Microsoft Office Outlook 12.0
+Content-type: text/calendar; method=REQUEST; charset=UTF-8
+Content-language: en-ca
+Content-transfer-encoding: 7bit
+Thread-index: AcuESy6St5Ld5H0tRiiVOIDVOIDEEAAAAAEA
+Original-recipient: rfc822;testuser@fake.foo
+
+BEGIN:VCALENDAR
+PRODID:-//Microsoft Corporation//Outlook 12.0 MIMEDIR//EN
+VERSION:2.0
+METHOD:REQUEST
+X-MS-OLK-FORCEINSPECTOROPEN:TRUE
+BEGIN:VEVENT
+ATTENDEE;CN=testuser@fake.foo;RSVP=TRUE:mailto:testuser@fake.foo
+CLASS:PUBLIC
+CREATED:20101114T222754Z
+DESCRIPTION:When: November-15-10 11:00 AM-11:30 AM (UTC-08:00) Pacific Time
+	 (US & Canada).\nWhere: Somewhere\n\nNote: The GMT offset above does not r
+	eflect daylight saving time adjustments.\n\n*~*~*~*~*~*~*~*~*~*\n\nNotes g
+	o here.\n
+DTEND:20101115T193000Z
+DTSTAMP:20101114T222754Z
+DTSTART:20101115T190000Z
+LAST-MODIFIED:20101114T222755Z
+LOCATION:Somewhere
+ORGANIZER;CN="Test Organizer":mailto:testorganizer@fake.foo
+PRIORITY:5
+SEQUENCE:0
+SUMMARY;LANGUAGE=en-ca:Test Appointment from Outlook
+TRANSP:OPAQUE
+UID:040000008200E00074C5B7101A82E0080000000030BE6F200884CB01000000000000000
+	010000000B5B05251BC49214C90DB69A71C44B819
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//E
+	N">\n<HTML>\n<HEAD>\n<META NAME="Generator" CONTENT="MS Exchange Server ve
+	rsion 08.00.0681.000">\n<TITLE></TITLE>\n</HEAD>\n<BODY>\n<!-- Converted f
+	rom text/rtf format -->\n\n<P DIR=LTR><SPAN LANG="en-us"><FONT FACE="Calib
+	ri">When: November-15-10 11:00 AM-11:30 AM (UTC-08:00) Pa</FONT><FONT FACE
+	="Calibri">cific Time (US &amp\; Canada).</FONT></SPAN></P>\n\n<P DIR=LTR>
+	<SPAN LANG="en-us"><FONT FACE="Calibri">Where: Somewhere</FONT></SPAN></P>
+	\n\n<P DIR=LTR><SPAN LANG="en-us"><FONT FACE="Calibri">Note: The GMT offse
+	t above does not reflect daylight saving time adjustments.</FONT></SPAN></
+	P>\n\n<P DIR=LTR><SPAN LANG="en-us"><FONT FACE="Calibri">*~*~*~*~*~*~*~*~*
+	~*</FONT></SPAN></P>\n\n<P DIR=LTR><SPAN LANG="en-us"></SPAN><SPAN LANG="e
+	n-ca"><FONT FACE="Calibri">Notes go here.</FONT></SPAN><SPAN LANG="en-us">
+	</SPAN><SPAN LANG="en-ca"></SPAN></P>\n\n</BODY>\n</HTML>
+X-MICROSOFT-CDO-BUSYSTATUS:TENTATIVE
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+X-MS-OLK-ALLOWEXTERNCHECK:TRUE
+X-MS-OLK-AUTOSTARTCHECK:FALSE
+X-MS-OLK-CONFTYPE:0
+X-MS-OLK-SENDER;CN="Test Organizer":mailto:testorganizer@fake.foo
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+END:VCALENDAR
+
+

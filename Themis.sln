@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Themis.TestClient", "Themis
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Themis.Core", "Themis.Core\Themis.Core.csproj", "{2FC4FAAD-58D1-4D2B-A7A5-8EB2DE50E08D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Themis.Core.Tests", "Themis.Core.Tests\Themis.Core.Tests.csproj", "{3CE8940A-0A65-432F-93FC-9DD963BC8C7A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,16 @@ Global
 		{2FC4FAAD-58D1-4D2B-A7A5-8EB2DE50E08D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{2FC4FAAD-58D1-4D2B-A7A5-8EB2DE50E08D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{2FC4FAAD-58D1-4D2B-A7A5-8EB2DE50E08D}.Release|x86.ActiveCfg = Release|Any CPU
+		{3CE8940A-0A65-432F-93FC-9DD963BC8C7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CE8940A-0A65-432F-93FC-9DD963BC8C7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CE8940A-0A65-432F-93FC-9DD963BC8C7A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3CE8940A-0A65-432F-93FC-9DD963BC8C7A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3CE8940A-0A65-432F-93FC-9DD963BC8C7A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3CE8940A-0A65-432F-93FC-9DD963BC8C7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CE8940A-0A65-432F-93FC-9DD963BC8C7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CE8940A-0A65-432F-93FC-9DD963BC8C7A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3CE8940A-0A65-432F-93FC-9DD963BC8C7A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3CE8940A-0A65-432F-93FC-9DD963BC8C7A}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

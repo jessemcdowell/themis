@@ -1,4 +1,4 @@
-NOT INCLUDED
+NOT INCLUDED WITH SOURCE (You must install these)
 
 NUnit 2.5.7
 http://www.nunit.org/
