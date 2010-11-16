@@ -42,7 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VCard\VCardReaderTests.cs" />
+    <Compile Include="VCard\VCardReaderGetBeginningAndEndingTests.cs" />
+    <Compile Include="VCard\VCardReaderReadUnfoldedLineTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Themis.Core\Themis.Core.csproj">

@@ -12,13 +12,10 @@ namespace Themis.VCard
 
         public bool TryGetFirstEntity(string name, out T entity)
         {
-            foreach (T e in this)
+            foreach (T e in GetEntities(name))
             {
-                if (String.Equals(e.Name, name, StringComparison.InvariantCultureIgnoreCase))
-                {
-                    entity = e;
-                    return true;
-                }
+                entity = e;
+                return true;
             }
 
             entity = null;
