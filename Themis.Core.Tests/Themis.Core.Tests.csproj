@@ -8,7 +8,7 @@
     <ProjectGuid>{3CE8940A-0A65-432F-93FC-9DD963BC8C7A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Themis.Core</RootNamespace>
+    <RootNamespace>Themis</RootNamespace>
     <AssemblyName>Themis.Core.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -42,8 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VCard\VCardReaderTests.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Themis.Core\Themis.Core.csproj">
+      <Project>{2FC4FAAD-58D1-4D2B-A7A5-8EB2DE50E08D}</Project>
+      <Name>Themis.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="ExampleEmails\Outlook-1-New.Raw.txt" />
   </ItemGroup>

@@ -68,6 +68,12 @@
     <Compile Include="Email\MailSystemReceivedEmail.cs" />
     <Compile Include="Email\SystemEmailSender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VCard\VCardEntity.cs" />
+    <Compile Include="VCard\VCardEntityList.cs" />
+    <Compile Include="VCard\VCardGroup.cs" />
+    <Compile Include="VCard\VCardReader.cs" />
+    <Compile Include="VCard\VCardSimpleValue.cs" />
+    <Compile Include="VCard\VCardValue.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

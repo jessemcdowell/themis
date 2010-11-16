@@ -18,3 +18,7 @@ using System.Runtime.InteropServices;
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("5ca2298c-3694-4496-a647-79b5409e8b3c")]
+
+
+// allow unit tests to access internal members
+[assembly: InternalsVisibleTo("Themis.Core.Tests")]
