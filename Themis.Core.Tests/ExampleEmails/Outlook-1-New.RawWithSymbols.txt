@@ -1,0 +1,75 @@
+Return-path: <testorganizer@fake.foo>
+Date: Tue, 16 Nov 2010 19:28:44 -0800
+From: Test Organizer <testorganizer@fake.foo>
+Subject: Test Appointment from Outlook
+To: testuser@fake.foo
+Message-id: <02ad01cb844b$2f375480$voidvoid$%void@fake.foo>
+MIME-version: 1.0
+X-Mailer: Microsoft Office Outlook 12.0
+Content-type: text/calendar; method=REQUEST; charset=utf-8
+Content-language: en-ca
+Content-transfer-encoding: 8BIT
+Thread-index: AcuGB4l+KmRxVOIDVOIDVOIDmligQAAAAHQ
+Original-recipient: rfc822;testuser@fake.foo
+
+BEGIN:VCALENDAR
+PRODID:-//Microsoft Corporation//Outlook 12.0 MIMEDIR//EN
+VERSION:2.0
+METHOD:REQUEST
+X-MS-OLK-FORCEINSPECTOROPEN:TRUE
+BEGIN:VEVENT
+ATTENDEE;CN=testuser@fake.foo;RSVP=TRUE:mailto:testuser@fake.foo
+CLASS:PUBLIC
+CREATED:20101117T032844Z
+DESCRIPTION:When: November-16-10 7:30 PM-8:00 PM (UTC-08:00) Pacific Time (
+	US & Canada).\nWhere: city\, state\n\nNote: The GMT offset above does not 
+	reflect daylight saving time adjustments.\n\n*~*~*~*~*~*~*~*~*~*\n\nCharac
+	ters: \n& amp\n\\ backslash\n\, comma\n?? hai\n\n
+DTEND:20101117T040000Z
+DTSTAMP:20101117T032844Z
+DTSTART:20101117T033000Z
+LAST-MODIFIED:20101117T032844Z
+LOCATION:city\, state
+ORGANIZER;CN="Test Organizer":mailto:testorganizer@fake.foo
+PRIORITY:5
+SEQUENCE:0
+SUMMARY;LANGUAGE=en-ca:subject \; semicolon
+TRANSP:OPAQUE
+UID:040000008200E00074C5B7101A82E0080000000040A95B7BC485CB01000000000000000
+	0100000005C34DB25F0121A4FA7D4C3F9CF3F2B98
+X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//E
+	N">\n<HTML>\n<HEAD>\n<META NAME="Generator" CONTENT="MS Exchange Server ve
+	rsion 08.00.0681.000">\n<TITLE></TITLE>\n</HEAD>\n<BODY>\n<!-- Converted f
+	rom text/rtf format -->\n\n<P DIR=LTR><SPAN LANG="en-us"><FONT FACE="Calib
+	ri">When: November-16-10 7:30 PM-8:00 PM (UTC-08:00) Pacific Time (US &amp
+	\; Canada).</FONT></SPAN></P>\n\n<P DIR=LTR><SPAN LANG="en-us"><FONT FACE=
+	"Calibri">Where: city\, state</FONT></SPAN></P>\n\n<P DIR=LTR><SPAN LANG="
+	en-us"><FONT FACE="Calibri">Note: The GMT offset above does not reflect da
+	ylight saving time adjustments.</FONT></SPAN></P>\n\n<P DIR=LTR><SPAN LANG
+	="en-us"><FONT FACE="Calibri">*~*~*~*~*~*~*~*~*~*</FONT></SPAN></P>\n\n<P 
+	DIR=LTR><SPAN LANG="en-us"></SPAN><SPAN LANG="en-ca"><FONT FACE="Calibri">
+	Characters: </FONT></SPAN></P>\n\n<P DIR=LTR><SPAN LANG="en-ca"><FONT FACE
+	="Calibri">&amp\; amp</FONT></SPAN></P>\n\n<P DIR=LTR><SPAN LANG="en-ca"><
+	FONT FACE="Calibri">\\</FONT><FONT FACE="Calibri"> backslash</FONT></SPAN>
+	</P>\n\n<P DIR=LTR><SPAN LANG="en-ca"><FONT FACE="Calibri">\, comma</FONT>
+	</SPAN></P>\n\n<P DIR=LTR><SPAN LANG="en-us"></SPAN><SPAN LANG="en-ca"><FO
+	NT FACE="MS Mincho">??</FONT></SPAN><SPAN LANG="en-us"></SPAN><SPAN LA
+	NG="en-ca"><FONT FACE="Calibri"> hai</FONT></SPAN></P>\n\n<P DIR=LTR><SPAN
+	 LANG="en-us"></SPAN><SPAN LANG="en-ca"></SPAN></P>\n\n</BODY>\n</HTML>
+X-MICROSOFT-CDO-BUSYSTATUS:TENTATIVE
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+X-MS-OLK-ALLOWEXTERNCHECK:TRUE
+X-MS-OLK-AUTOSTARTCHECK:FALSE
+X-MS-OLK-CONFTYPE:0
+X-MS-OLK-SENDER;CN="Test Organizer":mailto:testorganizer@fake.foo
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+END:VCALENDAR
+
+

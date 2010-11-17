@@ -21,5 +21,15 @@ namespace Themis.VCard
         /// The content and it's surroundings where the problem appears.
         /// </summary>
         public string Content { get; private set; }
+
+        public override string ToString()
+        {
+            string text = base.ToString();
+
+            if (!String.IsNullOrEmpty(Content))
+                text += "\r\nContent: " + Content;
+
+            return text;
+        }
     }
 }

@@ -18,10 +18,10 @@ namespace Themis.VCard
             Name = name;
         }
 
-        public VCardValue(string name, string value)
+        public VCardValue(string name, string escapedValue)
             : this(name)
         {
-            Value = value;
+            EscapedValue = escapedValue;
         }
 
         public VCardEntityList<VCardSimpleValue> Parameters { get; private set; }

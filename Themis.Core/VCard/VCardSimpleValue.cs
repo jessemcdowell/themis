@@ -13,15 +13,15 @@ namespace Themis.VCard
             Name = name;
         }
 
-        public VCardSimpleValue(string name, string value)
+        public VCardSimpleValue(string name, string escapedValue)
         {
             Name = name;
-            Value = value;
+            EscapedValue = escapedValue;
         }
 
-
-        public string Value { get; set; }
-
-
+        /// <summary>
+        /// The escaped and encoded form of the value.
+        /// </summary>
+        public string EscapedValue { get; set; }
     }
 }

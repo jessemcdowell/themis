@@ -42,6 +42,17 @@ namespace Themis.VCard
         }
 
         [Test]
+        public void First_Line_Only_With_Folded_Lines()
+        {
+            const string input = "DTSTART:20101\r\n 115T213000Z\r\nDTEND:20101115T230000Z\r\n";
+            const string expected = "DTSTART:20101115T213000Z";
+
+            string actual = CallReadUnfoldedLine(input);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
         public void Simple_Line_Without_CrLf()
         {
             const string input = "DTSTART:20101115T213000Z";
