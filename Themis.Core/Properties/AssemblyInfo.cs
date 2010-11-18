@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Themis.Core")]
 [assembly: AssemblyDescription("A simple resource scheduling service.")]
 [assembly: AssemblyProduct("Themis.Core")]
-[assembly: AssemblyCopyright("Copyright © McDowell 2010")]
+[assembly: AssemblyCopyright("Copyright © Jesse McDowell 2010")]
 [assembly: AssemblyCompany("Jesse McDowell")]
 
 [assembly: AssemblyVersion("1.0.0.0")]
