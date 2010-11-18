@@ -24,7 +24,7 @@ CREATED:20101117T032844Z
 DESCRIPTION:When: November-16-10 7:30 PM-8:00 PM (UTC-08:00) Pacific Time (
 	US & Canada).\nWhere: city\, state\n\nNote: The GMT offset above does not 
 	reflect daylight saving time adjustments.\n\n*~*~*~*~*~*~*~*~*~*\n\nCharac
-	ters: \n& amp\n\\ backslash\n\, comma\n?? hai\n\n
+	ters: \n& amp\n\\ backslash\n\, comma\nはい hai\n\n
 DTEND:20101117T040000Z
 DTSTAMP:20101117T032844Z
 DTSTART:20101117T033000Z
@@ -53,7 +53,7 @@ X-ALT-DESC;FMTTYPE=text/html:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//E
 	FONT FACE="Calibri">\\</FONT><FONT FACE="Calibri"> backslash</FONT></SPAN>
 	</P>\n\n<P DIR=LTR><SPAN LANG="en-ca"><FONT FACE="Calibri">\, comma</FONT>
 	</SPAN></P>\n\n<P DIR=LTR><SPAN LANG="en-us"></SPAN><SPAN LANG="en-ca"><FO
-	NT FACE="MS Mincho">??</FONT></SPAN><SPAN LANG="en-us"></SPAN><SPAN LA
+	NT FACE="MS Mincho">はい</FONT></SPAN><SPAN LANG="en-us"></SPAN><SPAN LA
 	NG="en-ca"><FONT FACE="Calibri"> hai</FONT></SPAN></P>\n\n<P DIR=LTR><SPAN
 	 LANG="en-us"></SPAN><SPAN LANG="en-ca"></SPAN></P>\n\n</BODY>\n</HTML>
 X-MICROSOFT-CDO-BUSYSTATUS:TENTATIVE

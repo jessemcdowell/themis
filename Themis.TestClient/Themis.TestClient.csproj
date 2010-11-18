@@ -96,6 +96,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Themis.Core.Tests\Themis.Core.Tests.csproj">
+      <Project>{3CE8940A-0A65-432F-93FC-9DD963BC8C7A}</Project>
+      <Name>Themis.Core.Tests</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Themis.Core\Themis.Core.csproj">
       <Project>{2FC4FAAD-58D1-4D2B-A7A5-8EB2DE50E08D}</Project>
       <Name>Themis.Core</Name>
