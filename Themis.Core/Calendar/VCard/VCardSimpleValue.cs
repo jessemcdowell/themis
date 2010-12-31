@@ -26,6 +26,48 @@ namespace Themis.Calendar.VCard
 
 
         /// <summary>
+        /// Parses and returns an escaped text value as a string
+        /// </summary>
+        /// <returns>The contents of the value with no inline escaping</returns>
+        public string GetText()
+        {
+            string inputText = EscapedValue;
+
+            if (String.IsNullOrEmpty(inputText))
+                return inputText;
+
+            // process the text into a string builder. The result can't be bigger than the original, but it could be smaller
+            StringBuilder output = new StringBuilder(inputText.Length);
+
+            int index = 0;
+            while (index < inputText.Length)
+            {
+                char c = inputText[index];
+
+                if (c == '\\')
+                {
+                    if ((index + 1) >= inputText.Length)
+                        throw new InvalidVCardFormatException("Text line ends with escape character", inputText);
+                    
+                    c = inputText[index + 1];
+                    if (c == 'n' || c == 'N')
+                        output.AppendLine();
+                    else
+                        output.Append(c);
+
+                    index += 2;
+                }
+                else
+                {
+                    output.Append(c);
+                    index++;
+                }
+            }
+
+            return output.ToString();
+        }
+
+        /// <summary>
         /// Parses the escaped value as a DateTime
         /// </summary>
         /// <returns>The value as a date time with a kind either in UTC (where time zone is specified) or unspecified (for local)</returns>
