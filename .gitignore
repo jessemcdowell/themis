@@ -7,3 +7,4 @@ deploy/
 *.cache
 _ReSharper.*
 *.resharper
+*.chw
