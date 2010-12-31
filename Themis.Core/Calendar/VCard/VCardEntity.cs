@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Themis.VCard
+namespace Themis.Calendar.VCard
 {
     public abstract class VCardEntity
     {

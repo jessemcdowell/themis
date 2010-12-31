@@ -1,4 +1,4 @@
-﻿namespace Themis.VCard
+﻿namespace Themis.Calendar.VCard
 {
     public enum VCardLineType
     {

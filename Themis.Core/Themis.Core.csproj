@@ -57,6 +57,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calendar\VCard\InvalidVCardFormatException.cs" />
+    <Compile Include="Calendar\VCard\VCardEntity.cs" />
+    <Compile Include="Calendar\VCard\VCardEntityList.cs" />
+    <Compile Include="Calendar\VCard\VCardGroup.cs" />
+    <Compile Include="Calendar\VCard\VCardLineReader.cs" />
+    <Compile Include="Calendar\VCard\VCardLineType.cs" />
+    <Compile Include="Calendar\VCard\VCardReader.cs" />
+    <Compile Include="Calendar\VCard\VCardSimpleValue.cs" />
+    <Compile Include="Calendar\VCard\VCardValue.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="Email\EmailAddress.cs" />
     <Compile Include="Email\EmailBuilder.cs" />
@@ -68,15 +77,6 @@
     <Compile Include="Email\MailSystemReceivedEmail.cs" />
     <Compile Include="Email\SystemEmailSender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VCard\InvalidVCardFormatException.cs" />
-    <Compile Include="VCard\VCardEntity.cs" />
-    <Compile Include="VCard\VCardEntityList.cs" />
-    <Compile Include="VCard\VCardGroup.cs" />
-    <Compile Include="VCard\VCardLineReader.cs" />
-    <Compile Include="VCard\VCardLineType.cs" />
-    <Compile Include="VCard\VCardReader.cs" />
-    <Compile Include="VCard\VCardSimpleValue.cs" />
-    <Compile Include="VCard\VCardValue.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace Themis.VCard
+namespace Themis.Calendar.VCard
 {
     public class VCardSimpleValue : VCardEntity
     {

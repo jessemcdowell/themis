@@ -3,7 +3,7 @@ using NUnit.Framework;
 using System.IO;
 using System.Text;
 
-namespace Themis.VCard
+namespace Themis.Calendar.VCard
 {
     [TestFixture]
     public class VCardReaderReadUnfoldedLineTests

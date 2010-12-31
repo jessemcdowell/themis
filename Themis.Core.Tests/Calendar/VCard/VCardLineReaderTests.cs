@@ -1,7 +1,7 @@
 ﻿using System;
 using NUnit.Framework;
 
-namespace Themis.VCard
+namespace Themis.Calendar.VCard
 {
     [TestFixture]
     public class VCardLineReaderTests

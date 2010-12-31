@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
 
-namespace Themis.VCard
+namespace Themis.Calendar.VCard
 {
     [TestFixture]
     public class VCardEntityListTests

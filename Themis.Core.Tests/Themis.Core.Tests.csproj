@@ -41,13 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calendar\VCard\VCardEntityListTests.cs" />
+    <Compile Include="Calendar\VCard\VCardLineReaderTests.cs" />
+    <Compile Include="Calendar\VCard\VCardReaderReadUnfoldedLineTests.cs" />
+    <Compile Include="Calendar\VCard\VCardReaderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VCard\VCardEntityListTests.cs" />
-    <Compile Include="VCard\VCardLineReaderTests.cs" />
-    <Compile Include="VCard\VCardReaderReadUnfoldedLineTests.cs" />
-    <Compile Include="VCard\VCardReaderTests.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Themis.Core\Themis.Core.csproj">
@@ -59,6 +57,7 @@
     <Content Include="ExampleEmails\Outlook-1-New.Raw.txt" />
     <Content Include="ExampleEmails\Outlook-1-New.RawWithSymbols.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

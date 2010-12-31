@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Themis.VCard
+namespace Themis.Calendar.VCard
 {
     /// <summary>
     /// Indicates a problem parsing VCard data

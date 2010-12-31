@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Themis.VCard
+namespace Themis.Calendar.VCard
 {
     public class VCardEntityList<T> : List<T> where T : VCardEntity
     {

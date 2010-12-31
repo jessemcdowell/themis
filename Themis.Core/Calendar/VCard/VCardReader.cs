@@ -2,7 +2,7 @@
 using System.Text;
 using System.IO;
 
-namespace Themis.VCard
+namespace Themis.Calendar.VCard
 {
     public class VCardReader
     {

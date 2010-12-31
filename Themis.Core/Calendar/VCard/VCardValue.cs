@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Themis.VCard
+namespace Themis.Calendar.VCard
 {
     public class VCardValue : VCardSimpleValue
     {
