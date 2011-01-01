@@ -20,20 +20,20 @@ namespace Themis.Calendar.VCard
             Assert.AreEqual(expected, actual);
         }
 
-        //[Test]
-        //public void Rfc2425_Text_Example_2_With_Multiple_Values()
-        //{
-        //    const string input = @"this is one value,this is another";
-        //    string[] expected = new string[] { "this is one value", "this is another" };
+        [Test]
+        public void Rfc2425_Text_Example_2_With_Multiple_Values()
+        {
+            const string input = @"this is one value,this is another";
+            string[] expected = new string[] { "this is one value", "this is another" };
 
-        //    VCardSimpleValue sv = new VCardSimpleValue(Name, input);
+            VCardSimpleValue sv = new VCardSimpleValue(Name, input);
 
-        //    VCardEntityList<VCardSimpleValue> actual = sv.GetListValues();
+            var actual = sv.GetListValues();
 
-        //    Assert.AreEqual(expected.GetLength(0), actual.Count, "Number of items");
-        //    Assert.AreEqual(expected[0], actual[0].GetText());
-        //    Assert.AreEqual(expected[1], actual[1].GetText());
-        //}
+            Assert.AreEqual(expected.GetLength(0), actual.Count, "Number of items");
+            Assert.AreEqual(expected[0], actual[0].GetText());
+            Assert.AreEqual(expected[1], actual[1].GetText());
+        }
 
         [Test]
         public void Rfc2425_Text_Example_3()
@@ -94,7 +94,7 @@ namespace Themis.Calendar.VCard
         }
 
         [Test]
-        public void Line_With_Escaped_Character_At_Ending()
+        public void Line_With_Escaped_Character_At_Ending_Fails()
         {
             const string input = @"Hello\,";
             const string expected = "Hello,";
@@ -105,5 +105,14 @@ namespace Themis.Calendar.VCard
             Assert.AreEqual(expected, actual);
         }
 
+        [Test]
+        [ExpectedException(typeof(VCardValueIsListException))]
+        public void List_Separator_Causes_Exception()
+        {
+            const string input = @"Hello,Hi";
+
+            VCardSimpleValue sv = new VCardSimpleValue(Name, input);
+            sv.GetText();
+        }
     }
 }

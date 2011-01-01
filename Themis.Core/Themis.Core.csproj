@@ -66,6 +66,7 @@
     <Compile Include="Calendar\VCard\VCardReader.cs" />
     <Compile Include="Calendar\VCard\VCardSimpleValue.cs" />
     <Compile Include="Calendar\VCard\VCardValue.cs" />
+    <Compile Include="Calendar\VCard\VCardValueIsListException.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="Email\EmailAddress.cs" />
     <Compile Include="Email\EmailBuilder.cs" />

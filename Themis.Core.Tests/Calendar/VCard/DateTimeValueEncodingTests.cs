@@ -182,23 +182,23 @@ namespace Themis.Calendar.VCard
             AssertDateTime(expected, actual);
         }
 
-        //[Test]
-        //public void Rfc2425_Example_4_Multiple_Values()
-        //{
-        //    const string input = "1996-10-22T14:00:00Z,1996-08-11T12:34:56Z";
-        //    DateTime[] expected = new DateTime[] {
-        //        new DateTime(1996, 10, 22, 14, 00, 00, DateTimeKind.Utc), 
-        //        new DateTime(1996, 08, 11, 12, 34, 56, DateTimeKind.Utc),
-        //    };
+        [Test]
+        public void Rfc2425_Example_4_Multiple_Values()
+        {
+            const string input = "1996-10-22T14:00:00Z,1996-08-11T12:34:56Z";
+            DateTime[] expected = new DateTime[] {
+                new DateTime(1996, 10, 22, 14, 00, 00, DateTimeKind.Utc), 
+                new DateTime(1996, 08, 11, 12, 34, 56, DateTimeKind.Utc),
+            };
 
-        //    VCardSimpleValue sv = new VCardSimpleValue(Name, input);
+            VCardSimpleValue sv = new VCardSimpleValue(Name, input);
 
-        //    VCardEntityList<VCardSimpleValue> actual = sv.GetListValues();
+            var actual = sv.GetListValues();
 
-        //    Assert.AreEqual(expected.GetLength(0), actual.Count, "Number of items");
-        //    AssertDateTime(expected[0], actual[0].GetDateTime());
-        //    AssertDateTime(expected[1], actual[1].GetDateTime());
-        //}
+            Assert.AreEqual(expected.GetLength(0), actual.Count, "Number of items");
+            AssertDateTime(expected[0], actual[0].GetDateTime());
+            AssertDateTime(expected[1], actual[1].GetDateTime());
+        }
 
         [Test]
         [ExpectedException(typeof(InvalidVCardFormatException), ExpectedMessage="DateTime does not contain a full date")]
@@ -310,6 +310,16 @@ namespace Themis.Calendar.VCard
             DateTime actual = sv.GetDateTime();
 
             AssertDateTime(expected, actual);
+        }
+
+        [Test]
+        [ExpectedException(typeof(VCardValueIsListException))]
+        public void List_Separator_Causes_Exception()
+        {
+            const string input = "19961022T140000Z,19960811T123456Z";
+
+            VCardSimpleValue sv = new VCardSimpleValue(Name, input);
+            sv.GetDateTime();
         }
     }
 }

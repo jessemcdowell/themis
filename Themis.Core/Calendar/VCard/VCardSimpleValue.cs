@@ -5,6 +5,9 @@ namespace Themis.Calendar.VCard
 {
     public class VCardSimpleValue : VCardEntity
     {
+        private string _escapedValue;
+        private bool? _isValueList = null;
+
         public VCardSimpleValue()
         { }
 
@@ -22,8 +25,109 @@ namespace Themis.Calendar.VCard
         /// <summary>
         /// The escaped and encoded form of the value.
         /// </summary>
-        public string EscapedValue { get; set; }
+        public string EscapedValue 
+        {
+            get { return _escapedValue; }
+            set
+            {
+                _escapedValue = value;
+                _isValueList = null;
+            }
+        }
 
+        /// <summary>
+        /// Indicates if EscapedValue is a value list
+        /// </summary>
+        public bool IsValueList
+        {
+            get
+            {
+                bool? value = _isValueList;
+                if (value.HasValue)
+                    return value.Value;
+
+                _isValueList = value = GetIsValueList();
+                return value.Value;
+            }
+        }
+
+        private bool GetIsValueList()
+        {
+            string inputText = EscapedValue;
+            if (String.IsNullOrEmpty(inputText))
+                return false;
+
+            int index = 0;
+            while (index < inputText.Length)
+            {
+                char c = inputText[index];
+
+                if (c == ',')
+                    return true;
+                if (c == '\\') // escape character
+                {
+                    // skip another character, and make sure there is more at the end
+                    index++;
+                    if (index >= inputText.Length)
+                        throw new InvalidVCardFormatException("Line ends with escape character", inputText);
+                }
+
+                index++;
+            }
+
+            return false;
+        }
+
+                
+        /// <summary>
+        /// Parses a value list into a list of values
+        /// </summary>
+        /// <returns></returns>
+        public VCardEntityList<VCardSimpleValue> GetListValues()
+        {
+            VCardEntityList<VCardSimpleValue> output = new VCardEntityList<VCardSimpleValue>();
+
+            string inputText = EscapedValue;
+
+            if (String.IsNullOrEmpty(inputText))
+            {
+                output.Add(new VCardSimpleValue("1", String.Empty));
+                return output;
+            }
+
+            int count = 0;
+            int lastIndex = -1;
+            int index = 0;
+            while (index < inputText.Length)
+            {
+                char c = inputText[index];
+
+                if (c == ',')
+                {
+                    count++;
+                    string content = inputText.Substring(lastIndex + 1, index - lastIndex - 1);
+                    output.Add(new VCardSimpleValue(count.ToString(), content));
+
+                    lastIndex = index;
+                }
+                if (c == '\\') // escape character
+                {
+                    // skip another character, and make sure there is more at the end
+                    index++;
+                    if (index >= inputText.Length)
+                        throw new InvalidVCardFormatException("Line ends with escape character", inputText);
+                }
+
+                index++;
+            }
+
+            // add everything after the last separator
+            count++;
+            output.Add(new VCardSimpleValue(count.ToString(), inputText.Substring(lastIndex + 1)));
+
+            // return the list
+            return output;
+        }
 
         /// <summary>
         /// Parses and returns an escaped text value as a string
@@ -34,7 +138,7 @@ namespace Themis.Calendar.VCard
             string inputText = EscapedValue;
 
             if (String.IsNullOrEmpty(inputText))
-                return inputText;
+                return String.Empty;
 
             // process the text into a string builder. The result can't be bigger than the original, but it could be smaller
             StringBuilder output = new StringBuilder(inputText.Length);
@@ -48,7 +152,7 @@ namespace Themis.Calendar.VCard
                 {
                     if ((index + 1) >= inputText.Length)
                         throw new InvalidVCardFormatException("Text line ends with escape character", inputText);
-                    
+
                     c = inputText[index + 1];
                     if (c == 'n' || c == 'N')
                         output.AppendLine();
@@ -56,6 +160,10 @@ namespace Themis.Calendar.VCard
                         output.Append(c);
 
                     index += 2;
+                }
+                else if (c == ',')
+                {
+                    throw new VCardValueIsListException();
                 }
                 else
                 {
@@ -94,9 +202,13 @@ namespace Themis.Calendar.VCard
             if ((text.Length > 15) && (text[15] == '.'))
                 text = text.Substring(0, 15) + text.Substring(16);
 
-            // make sure thre isn't an offset
+            // make sure three isn't an offset
             if (text.Contains("-"))
                 throw new InvalidVCardFormatException("DateTime with offset specified not supported", inputText);
+
+            // make sure it isn't a list
+            if (text.Contains(","))
+                throw new VCardValueIsListException();
 
 
             // get the parts of the date
