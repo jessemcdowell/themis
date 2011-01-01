@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using System.Globalization;
 
 namespace Themis.Calendar.VCard
 {
@@ -220,9 +221,9 @@ namespace Themis.Calendar.VCard
             int day;
             try
             {
-                year = Int32.Parse(text.Substring(0, 4), System.Globalization.CultureInfo.InvariantCulture);
-                month = Int32.Parse(text.Substring(4, 2), System.Globalization.CultureInfo.InvariantCulture);
-                day = Int32.Parse(text.Substring(6, 2), System.Globalization.CultureInfo.InvariantCulture);
+                year = Int32.Parse(text.Substring(0, 4), CultureInfo.InvariantCulture);
+                month = Int32.Parse(text.Substring(4, 2), CultureInfo.InvariantCulture);
+                day = Int32.Parse(text.Substring(6, 2), CultureInfo.InvariantCulture);
             }
             catch (FormatException ex)
             {
@@ -242,11 +243,11 @@ namespace Themis.Calendar.VCard
 
                 try
                 {
-                    hour = Int32.Parse(text.Substring(9, 2), System.Globalization.CultureInfo.InvariantCulture);
-                    minute = Int32.Parse(text.Substring(11, 2), System.Globalization.CultureInfo.InvariantCulture);
+                    hour = Int32.Parse(text.Substring(9, 2), CultureInfo.InvariantCulture);
+                    minute = Int32.Parse(text.Substring(11, 2), CultureInfo.InvariantCulture);
 
                     if (text.Length >= 15)
-                        second = Int32.Parse(text.Substring(13, 2), System.Globalization.CultureInfo.InvariantCulture);
+                        second = Int32.Parse(text.Substring(13, 2), CultureInfo.InvariantCulture);
                 }
                 catch (FormatException ex)
                 {
@@ -261,6 +262,40 @@ namespace Themis.Calendar.VCard
 
             // return the value
             return new DateTime(year, month, day, hour, minute, second, kind);
+        }
+
+        /// <summary>
+        /// Parses the escaped value as a boolean.
+        /// </summary>
+        /// <returns>The boolean value</returns>
+        public bool GetBoolean()
+        {
+            string text = GetText();
+            switch (text.ToLowerInvariant())
+            {
+                case "true":
+                    return true;
+
+                case "false":
+                    return false;
+
+                default:
+                    throw new InvalidVCardFormatException("Boolean was not an expected value", text);
+            }
+        }
+
+        /// <summary>
+        /// Parses the escaped value as an integer.
+        /// </summary>
+        /// <returns>The intereg value</returns>
+        public int GetInteger()
+        {
+            string text = GetText();
+            int value;
+            if (Int32.TryParse(text, NumberStyles.AllowLeadingSign, CultureInfo.InvariantCulture, out value))
+                return value;
+
+            throw new InvalidVCardFormatException("Integer was not a valid format", text);
         }
     }
 }

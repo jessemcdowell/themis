@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calendar\VCard\DateTimeValueEncodingTests.cs" />
+    <Compile Include="Calendar\VCard\SimpleValueEncodingTests.cs" />
     <Compile Include="Calendar\VCard\TextValueEncodingTests.cs" />
     <Compile Include="Calendar\VCard\ValueListEncodingTests.cs" />
     <Compile Include="Calendar\VCard\VCardEntityListTests.cs" />
