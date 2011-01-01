@@ -37,7 +37,7 @@ namespace Themis.Calendar.VCard
         }
 
         [Test]
-        [ExpectedException(typeof(InvalidVCardFormatException), ExpectedMessage = "Boolean was not an expected value")]
+        [ExpectedException(typeof(InvalidVCardFormatException), ExpectedMessage = "Boolean is not an expected value")]
         public void Parse_Invalid_Boolean_Fails()
         {
             string input = "perhaps";
@@ -63,7 +63,7 @@ namespace Themis.Calendar.VCard
         }
 
         [Test]
-        [ExpectedException(typeof(InvalidVCardFormatException), ExpectedMessage="Integer was not a valid format")]
+        [ExpectedException(typeof(InvalidVCardFormatException), ExpectedMessage="Integer is not a valid format")]
         [TestCase("lots")]
         [TestCase("+-5")]
         [TestCase("3.8")]

@@ -239,7 +239,7 @@ namespace Themis.Calendar.VCard
             if ((text.Length > 8) && (text[8] == 'T'))
             {
                 if (text.Length < 13)
-                    throw new InvalidVCardFormatException("DateTime does has a time marker but not contain a hours and minutes", inputText);
+                    throw new InvalidVCardFormatException("DateTime has a time marker but not contain a hours and minutes", inputText);
 
                 try
                 {
@@ -280,7 +280,7 @@ namespace Themis.Calendar.VCard
                     return false;
 
                 default:
-                    throw new InvalidVCardFormatException("Boolean was not an expected value", text);
+                    throw new InvalidVCardFormatException("Boolean is not an expected value", text);
             }
         }
 
@@ -295,7 +295,7 @@ namespace Themis.Calendar.VCard
             if (Int32.TryParse(text, NumberStyles.AllowLeadingSign, CultureInfo.InvariantCulture, out value))
                 return value;
 
-            throw new InvalidVCardFormatException("Integer was not a valid format", text);
+            throw new InvalidVCardFormatException("Integer is not a valid format", text);
         }
     }
 }

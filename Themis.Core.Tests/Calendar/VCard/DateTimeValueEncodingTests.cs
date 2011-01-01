@@ -231,7 +231,7 @@ namespace Themis.Calendar.VCard
         }
 
         [Test]
-        [ExpectedException(typeof(InvalidVCardFormatException), ExpectedMessage = "DateTime does has a time marker but not contain a hours and minutes")]
+        [ExpectedException(typeof(InvalidVCardFormatException), ExpectedMessage = "DateTime has a time marker but not contain a hours and minutes")]
         public void DateTime_With_Time_Marker_But_No_Time_Fails()
         {
             const string input = "20101114T";
