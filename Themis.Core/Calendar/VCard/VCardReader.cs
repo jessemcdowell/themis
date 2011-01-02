@@ -12,7 +12,7 @@ namespace Themis.Calendar.VCard
         /// </summary>
         /// <param name="reader"></param>
         /// <returns>The first entity from the stream reader, or null if there are none remaining</returns>
-        public VCardEntity ReadEntity(StreamReader reader)
+        public VCardEntity ReadEntity(TextReader reader)
         {
             string unfoldedLine = ReadUnfoldedLine(reader);
             if (unfoldedLine == null)
@@ -22,7 +22,7 @@ namespace Themis.Calendar.VCard
             return GetEntityFromLine(reader, line);
         }
 
-        private VCardEntity GetEntityFromLine(StreamReader reader, VCardLineReader line)
+        private VCardEntity GetEntityFromLine(TextReader reader, VCardLineReader line)
         {
             switch (line.Type)
             {
@@ -42,7 +42,7 @@ namespace Themis.Calendar.VCard
             }
         }
 
-        private void ReadAllGroupChildren(StreamReader reader, VCardGroup group)
+        private void ReadAllGroupChildren(TextReader reader, VCardGroup group)
         {
             while (true)
             {
@@ -84,7 +84,7 @@ namespace Themis.Calendar.VCard
         /// </summary>
         /// <param name="reader">The stream of text to read.</param>
         /// <returns>The complete unfolded line with no trailing CrLf</returns>
-        internal string ReadUnfoldedLine(StreamReader reader)
+        internal string ReadUnfoldedLine(TextReader reader)
         {
             string text = reader.ReadLine();
             if (text == null)

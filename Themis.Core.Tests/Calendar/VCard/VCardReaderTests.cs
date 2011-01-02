@@ -10,9 +10,7 @@ namespace Themis.Calendar.VCard
     {
         private VCardEntity ReadVCardEntity(string input)
         {
-            var encoding = Encoding.UTF8;
-            using (MemoryStream ms = new MemoryStream(encoding.GetBytes(input), false))
-            using (StreamReader sr = new StreamReader(ms, encoding))
+            using (StringReader sr = new StringReader(input))
             {
                 VCardReader vcr = new VCardReader();
                 return vcr.ReadEntity(sr);

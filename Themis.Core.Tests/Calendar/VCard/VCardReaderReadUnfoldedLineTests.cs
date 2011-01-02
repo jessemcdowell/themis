@@ -10,9 +10,7 @@ namespace Themis.Calendar.VCard
     {
         private string CallReadUnfoldedLine(string input)
         {
-            var encoding = Encoding.UTF8;
-            using (MemoryStream ms = new MemoryStream(encoding.GetBytes(input), false))
-            using (StreamReader sr = new StreamReader(ms, encoding))
+            using (StringReader sr = new StringReader(input))
             {
                 VCardReader vcr = new VCardReader();
                 return vcr.ReadUnfoldedLine(sr);
@@ -111,7 +109,7 @@ namespace Themis.Calendar.VCard
         public void End_Of_Stream_Returns_Null()
         {
             string actual;
-            using (StreamReader sr = new StreamReader(new MemoryStream()))
+            using (StringReader sr = new StringReader(String.Empty))
             {
                 VCardReader vcr = new VCardReader();
                 actual = vcr.ReadUnfoldedLine(sr);
