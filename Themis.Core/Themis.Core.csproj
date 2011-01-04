@@ -49,6 +49,7 @@
       <HintPath>..\lib\Castle.Windsor.2.5\bin-dotNet40\Castle.Windsor.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -57,6 +58,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calendar\AttendeeData.cs" />
+    <Compile Include="Calendar\EventData.cs" />
+    <Compile Include="Calendar\EventRequestData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Calendar\EventRequestType.cs" />
+    <Compile Include="Calendar\VCalendarFormatException.cs" />
+    <Compile Include="Calendar\VCalendarRequestParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Calendar\VCard\InvalidVCardFormatException.cs" />
     <Compile Include="Calendar\VCard\VCardEntity.cs" />
     <Compile Include="Calendar\VCard\VCardEntityList.cs" />

@@ -9,33 +9,6 @@ namespace Themis.Calendar.VCard
         private const string Name = "N";
 
         [Test]
-        [ExpectedException(typeof(AssertionException), MatchType=MessageMatch.Contains, ExpectedMessage="DateTime Value")]
-        public void Assert_DateTime_With_Different_Time_Fails()
-        {
-            DateTime d1 = new DateTime(1998, 01, 18, 23, 00, 00, DateTimeKind.Utc);
-            DateTime d2 = new DateTime(1998, 01, 18, 23, 00, 01, DateTimeKind.Utc);
-
-            AssertDateTime(d1, d2);
-        }
-
-        [Test]
-        [ExpectedException(typeof(AssertionException), MatchType=MessageMatch.Contains, ExpectedMessage="DateTime Kind")]
-        public void Assert_DateTime_With_Different_Kinds_Fails()
-        {
-            DateTime d1 = new DateTime(1998, 01, 18, 23, 00, 00, DateTimeKind.Unspecified);
-            DateTime d2 = new DateTime(1998, 01, 18, 23, 00, 00, DateTimeKind.Utc);
-
-            AssertDateTime(d1, d2);            
-        }
-
-        public static void AssertDateTime(DateTime expected, DateTime actual)
-        {
-            // it seems that this statement won't catch differences in kinds
-            Assert.AreEqual(expected, actual, "DateTime Value");
-            Assert.AreEqual(expected.Kind, actual.Kind, "DateTime Kind");
-        }
-
-        [Test]
         [ExpectedException(typeof(InvalidVCardFormatException), ExpectedMessage="DateTime with offset specified not supported")]
         public void Rfc2445_Invalid_Example_1()
         {
@@ -54,7 +27,7 @@ namespace Themis.Calendar.VCard
             VCardSimpleValue sv = new VCardSimpleValue(Name, input);
             DateTime actual = sv.GetDateTime();
 
-            AssertDateTime(expected, actual);
+            DateTimeAssert.AreEqual(expected, actual);
         }
 
         [Test]
@@ -66,7 +39,7 @@ namespace Themis.Calendar.VCard
             VCardSimpleValue sv = new VCardSimpleValue(Name, input);
             DateTime actual = sv.GetDateTime();
 
-            AssertDateTime(expected, actual);
+            DateTimeAssert.AreEqual(expected, actual);
         }
 
         //[Test]
@@ -83,7 +56,7 @@ namespace Themis.Calendar.VCard
         //
         //    DateTime actual = v.GetDateTime();
         //
-        //    AssertDateTime(expected, actual);
+        //    DateTimeAssert.AreEqual(expected, actual);
         //}
 
         [Test]
@@ -95,7 +68,7 @@ namespace Themis.Calendar.VCard
             VCardSimpleValue sv = new VCardSimpleValue(Name, input);
             DateTime actual = sv.GetDateTime();
 
-            AssertDateTime(expected, actual);
+            DateTimeAssert.AreEqual(expected, actual);
         }
 
         [Test]
@@ -107,7 +80,7 @@ namespace Themis.Calendar.VCard
             VCardSimpleValue sv = new VCardSimpleValue(Name, input);
             DateTime actual = sv.GetDateTime();
 
-            AssertDateTime(expected, actual);
+            DateTimeAssert.AreEqual(expected, actual);
         }
 
         [Test]
@@ -119,7 +92,7 @@ namespace Themis.Calendar.VCard
             VCardSimpleValue sv = new VCardSimpleValue(Name, input);
             DateTime actual = sv.GetDateTime();
 
-            AssertDateTime(expected, actual);
+            DateTimeAssert.AreEqual(expected, actual);
         }
 
         [Test]
@@ -131,7 +104,7 @@ namespace Themis.Calendar.VCard
             VCardSimpleValue sv = new VCardSimpleValue(Name, input);
             DateTime actual = sv.GetDateTime();
 
-            AssertDateTime(expected, actual);
+            DateTimeAssert.AreEqual(expected, actual);
         }
 
         [Test]
@@ -143,7 +116,7 @@ namespace Themis.Calendar.VCard
             VCardSimpleValue sv = new VCardSimpleValue(Name, input);
             DateTime actual = sv.GetDateTime();
 
-            AssertDateTime(expected, actual);
+            DateTimeAssert.AreEqual(expected, actual);
         }
 
         [Test]
@@ -155,7 +128,7 @@ namespace Themis.Calendar.VCard
             VCardSimpleValue sv = new VCardSimpleValue(Name, input);
             DateTime actual = sv.GetDateTime();
 
-            AssertDateTime(expected, actual);
+            DateTimeAssert.AreEqual(expected, actual);
         }
 
         [Test]
@@ -167,7 +140,7 @@ namespace Themis.Calendar.VCard
             VCardSimpleValue sv = new VCardSimpleValue(Name, input);
             DateTime actual = sv.GetDateTime();
 
-            AssertDateTime(expected, actual);
+            DateTimeAssert.AreEqual(expected, actual);
         }
 
         [Test]
@@ -179,7 +152,7 @@ namespace Themis.Calendar.VCard
             VCardSimpleValue sv = new VCardSimpleValue(Name, input);
             DateTime actual = sv.GetDateTime();
 
-            AssertDateTime(expected, actual);
+            DateTimeAssert.AreEqual(expected, actual);
         }
 
         [Test]
@@ -196,8 +169,8 @@ namespace Themis.Calendar.VCard
             var actual = sv.GetListValues();
 
             Assert.AreEqual(expected.GetLength(0), actual.Count, "Number of items");
-            AssertDateTime(expected[0], actual[0].GetDateTime());
-            AssertDateTime(expected[1], actual[1].GetDateTime());
+            DateTimeAssert.AreEqual(expected[0], actual[0].GetDateTime());
+            DateTimeAssert.AreEqual(expected[1], actual[1].GetDateTime());
         }
 
         [Test]
@@ -249,7 +222,7 @@ namespace Themis.Calendar.VCard
             VCardSimpleValue sv = new VCardSimpleValue(Name, input);
             DateTime actual = sv.GetDateTime();
 
-            AssertDateTime(expected, actual);
+            DateTimeAssert.AreEqual(expected, actual);
         }
 
         [Test]
@@ -261,7 +234,7 @@ namespace Themis.Calendar.VCard
             VCardSimpleValue sv = new VCardSimpleValue(Name, input);
             DateTime actual = sv.GetDateTime();
 
-            AssertDateTime(expected, actual);
+            DateTimeAssert.AreEqual(expected, actual);
         }
 
         [Test]
@@ -273,7 +246,7 @@ namespace Themis.Calendar.VCard
             VCardSimpleValue sv = new VCardSimpleValue(Name, input);
             DateTime actual = sv.GetDateTime();
 
-            AssertDateTime(expected, actual);
+            DateTimeAssert.AreEqual(expected, actual);
         }
 
         [Test]
@@ -285,7 +258,7 @@ namespace Themis.Calendar.VCard
             VCardSimpleValue sv = new VCardSimpleValue(Name, input);
             DateTime actual = sv.GetDateTime();
 
-            AssertDateTime(expected, actual);
+            DateTimeAssert.AreEqual(expected, actual);
         }
 
         [Test]
@@ -297,7 +270,7 @@ namespace Themis.Calendar.VCard
             VCardSimpleValue sv = new VCardSimpleValue(Name, input);
             DateTime actual = sv.GetDateTime();
 
-            AssertDateTime(expected, actual);
+            DateTimeAssert.AreEqual(expected, actual);
         }
 
         [Test]
@@ -309,7 +282,7 @@ namespace Themis.Calendar.VCard
             VCardSimpleValue sv = new VCardSimpleValue(Name, input);
             DateTime actual = sv.GetDateTime();
 
-            AssertDateTime(expected, actual);
+            DateTimeAssert.AreEqual(expected, actual);
         }
 
         [Test]

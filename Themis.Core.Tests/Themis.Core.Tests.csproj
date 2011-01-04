@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calendar\VCalendarRequestParserTests.cs" />
     <Compile Include="Calendar\VCard\DateTimeValueEncodingTests.cs" />
     <Compile Include="Calendar\VCard\SimpleValueEncodingTests.cs" />
     <Compile Include="Calendar\VCard\TextValueEncodingTests.cs" />
@@ -49,6 +50,8 @@
     <Compile Include="Calendar\VCard\VCardLineReaderTests.cs" />
     <Compile Include="Calendar\VCard\VCardReaderReadUnfoldedLineTests.cs" />
     <Compile Include="Calendar\VCard\VCardReaderTests.cs" />
+    <Compile Include="DateTimeAssert.cs" />
+    <Compile Include="DateTimeAssertTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
