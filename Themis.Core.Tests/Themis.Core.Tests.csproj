@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ActiveUp.Net.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6cceae6a4844c51b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\MailSystem.NET.December.2009\ActiveUp.Net.Common.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework, Version=2.5.7.10213, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,6 +56,8 @@
     <Compile Include="Calendar\VCard\VCardReaderTests.cs" />
     <Compile Include="DateTimeAssert.cs" />
     <Compile Include="DateTimeAssertTests.cs" />
+    <Compile Include="Email\MailSystemReceivedEmailTests.cs" />
+    <Compile Include="ExampleEmails\Messages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,8 +67,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ExampleEmails\Outlook-1-New.Raw.txt" />
-    <Content Include="ExampleEmails\Outlook-1-New.RawWithSymbols.txt" />
+    <Content Include="ExampleEmails\Outlook-1-New.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExampleEmails\Outlook-1-New.WithSymbols.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
