@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using ActiveUp.Net.Mail;
+using Themis.Email;
 
 namespace Themis.ExampleEmails
 {
@@ -15,6 +16,11 @@ namespace Themis.ExampleEmails
             return Parser.ParseMessageFromFile(path);
         }
 
+        public static IReceivedEmail GetRecievedEmail(Message message)
+        {
+            return new MailSystemReceivedEmail(message);
+        }
+
         public static Message GetOutlook1NewEmail()
         {
             return GetMessageByFileName("Outlook-1-New.txt");
@@ -24,6 +30,5 @@ namespace Themis.ExampleEmails
         {
             return GetMessageByFileName("Outlook-1-New.WithSymbols.txt");
         }
-
     }
 }

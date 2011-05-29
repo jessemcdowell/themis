@@ -1,17 +1,26 @@
 ﻿using System;
 using Themis.Email;
 using Themis.Calendar.VCard;
+using System.IO;
 
 namespace Themis.Calendar
 {
     /// <summary>
     /// Reads Calendar Request data in the VCalendar format
     /// </summary>
-    public class VCalendarRequestParser
+    public class VCalendarRequestParser : IVCalendarRequestParser
     {
-        public EventRequestData GetEventRequestFromEmail(IReceivedEmail email)
+        public EventRequestData GetEventRequestFromVCardStream(TextReader stream)
         {
-            throw new NotImplementedException();
+            VCardReader reader = new VCardReader();
+            
+            VCardEntity entity = reader.ReadEntity(stream);
+
+            VCardGroup document = entity as VCardGroup;
+            if (document == null)
+                throw new VCalendarNotFoundException("A VCalendar group was not found in the stream"); 
+
+            return GetEventRequestFromVCard(document);
         }
 
         public EventRequestData GetEventRequestFromVCard(VCardGroup document)

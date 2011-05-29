@@ -17,8 +17,9 @@ namespace Themis.TestClient
                 MailboxConnectionInfo mailboxInfo = GetMailboxInfoFromAppConfig();
 
                 //Config.Container.Resolve<ListAllEmails>().Execute(mailboxInfo);
-                Config.Container.Resolve<ReplyToAllEmails>().Execute(mailboxInfo);
-                
+                //Config.Container.Resolve<ReplyToAllEmails>().Execute(mailboxInfo);
+                Config.Container.Resolve<WriteInvitationsToConsole>().Execute(mailboxInfo);
+
             }
             catch (Exception ex)
             {

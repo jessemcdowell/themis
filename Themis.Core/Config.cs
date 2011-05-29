@@ -23,7 +23,11 @@ namespace Themis
 
                 Component.For<Email.IEmailRetriever>().ImplementedBy<Email.MailSystemEmailRetriever>(),
 
-                Component.For<Email.IEmailSender>().ImplementedBy<Email.SystemEmailSender>()
+                Component.For<Email.IEmailSender>().ImplementedBy<Email.SystemEmailSender>(),
+
+                Component.For<Calendar.IVCalendarRequestParser>().ImplementedBy<Calendar.VCalendarRequestParser>(),
+
+                Component.For<EmailProcessing.IEmailCalendarRequestRetriever>().ImplementedBy<EmailProcessing.EmailCalendarRequestRetriever>()
 
                 );
         }

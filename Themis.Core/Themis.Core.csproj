@@ -64,7 +64,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Calendar\EventRequestType.cs" />
+    <Compile Include="Calendar\IVCalendarRequestParser.cs" />
     <Compile Include="Calendar\VCalendarFormatException.cs" />
+    <Compile Include="Calendar\VCalendarNotFoundException.cs" />
     <Compile Include="Calendar\VCalendarRequestParser.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -79,11 +81,14 @@
     <Compile Include="Calendar\VCard\VCardValue.cs" />
     <Compile Include="Calendar\VCard\VCardValueIsListException.cs" />
     <Compile Include="Config.cs" />
+    <Compile Include="EmailProcessing\EmailCalendarRequestRetriever.cs" />
+    <Compile Include="EmailProcessing\IEmailCalendarRequestRetriever.cs" />
     <Compile Include="Email\EmailAddress.cs" />
     <Compile Include="Email\EmailBuilder.cs" />
     <Compile Include="Email\IEmailRetriever.cs" />
     <Compile Include="Email\IReceivedEmail.cs" />
     <Compile Include="Email\IEmailSender.cs" />
+    <Compile Include="Email\IReceivedEmailSection.cs" />
     <Compile Include="Email\MailboxConnectionInfo.cs" />
     <Compile Include="Email\MailSystemEmailRetriever.cs" />
     <Compile Include="Email\MailSystemReceivedEmail.cs" />

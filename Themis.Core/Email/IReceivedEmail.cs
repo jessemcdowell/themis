@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Themis.Email
 {
@@ -7,5 +8,7 @@ namespace Themis.Email
         EmailAddress From { get; }
 
         string Subject { get; }
+
+        IList<IReceivedEmailSection> Sections { get; }
     }
 }

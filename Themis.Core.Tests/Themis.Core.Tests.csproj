@@ -56,6 +56,10 @@
     <Compile Include="Calendar\VCard\VCardReaderTests.cs" />
     <Compile Include="DateTimeAssert.cs" />
     <Compile Include="DateTimeAssertTests.cs" />
+    <Compile Include="EmailProcessing\EmailCalendarRequestRetrieverTests.cs" />
+    <Compile Include="EmailProcessing\FakeReceivedEmailSection.cs" />
+    <Compile Include="EmailProcessing\FakeVCalendarRequestParser.cs" />
+    <Compile Include="EmailProcessing\FakeVCalendarRequestParserTests.cs" />
     <Compile Include="Email\MailSystemReceivedEmailTests.cs" />
     <Compile Include="ExampleEmails\Messages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
